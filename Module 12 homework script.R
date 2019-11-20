@@ -1,7 +1,7 @@
 ##### BAE590 Module 12 homework
 ##### Author: Kanjana Laosuntisuk
 ##### Date created: Nov 17, 2019
-##### Last modified: Nov 17, 2019
+##### Last modified: Nov 20, 2019
 
 # clear workspace and load packages 
 rm(list=ls(all=TRUE))
@@ -36,8 +36,8 @@ harvey_tweets %>%
   group_by(datetime) %>%
   count() %>%
   ggplot(mapping = aes(x = datetime, y = n)) +
-  geom_point(alpha = 0.5) +
-  geom_vline(aes(xintercept = as.integer(as.POSIXct("2017-08-26 03:00:00"))), color = "red", size = 1) +
+  geom_point(alpha = 0.5, size = 2) +
+  geom_vline(aes(xintercept = ymd_hms("2017-08-26 03:00:00")), color = "red", size = 1.2) +
   labs(x = NULL,
        y = "Number of Tweets") +
   theme_bw()
